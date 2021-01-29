@@ -6,3 +6,7 @@ A modified version of Fabrice Bellard's JSLinux; needed to run a couple ae27ff t
  - Upload progress code is currently disabled until more modular code can be added.
  - File table has been modified to indicate mounted files at reserved addresses
  - File system requests are caught by a PHP loader which redirects reserved addresses to mounted files.
+
+## Prerequisites
+ - Server with PHP support
+ - Server must be configured to rewrite paths like `/index/abc` to execute `/index.php` (we need this for `/vm_files/buildroot-x86/files/address` to execute `/vm_files/buildroot-x86/files.php`)
