@@ -2,6 +2,8 @@
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 
+//this is a custom script which intercepts filesystem requests and allows files to be mounted at reserved addresses.
+
 Global $mounted_files;
 $mounted_files = array(
 	"0000000001100000" => "outguess-0.2.tar.gz",
