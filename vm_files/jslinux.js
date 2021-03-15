@@ -51,6 +51,14 @@ function on_update_file(f,nameoverride)
     reader.readAsArrayBuffer(f);
 }
 
+function downloading_timer_cb()
+{
+    if(typeof window.jslinuxdisabledownloadprogress!=="undefined" && window.jslinuxdisabledownloadprogress)
+	return;//dummy code
+    var el = document.getElementById("net_progress");
+    el.style.visibility = "hidden";
+    downloading_timer_pending = false;
+}
 
 function update_downloading(flag)
 {
