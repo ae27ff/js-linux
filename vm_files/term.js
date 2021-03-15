@@ -140,7 +140,6 @@ Term.prototype.open = function(parent_el, textarea_el)
 
     this.refresh(0, this.h - 1);
 
-if(typeof window.jslinuxskiphandlers==="undefined"){
     // key handler
     document.addEventListener("keydown", 
                               this.keyDownHandler.bind(this), true);
@@ -156,7 +155,7 @@ if(typeof window.jslinuxskiphandlers==="undefined"){
     // paste
     document.defaultView.addEventListener("paste", 
                                           this.pasteHandler.bind(this), false);
-}
+
 
     // cursor blinking
     term = this;
@@ -695,6 +694,7 @@ Term.prototype.interceptBrowserExit = function (ev)
 
 Term.prototype.keyDownHandler = function (ev)
 {
+    if(typeof window.jslinuxskiphandlers!=="undefined" && window.jslinuxskiphandlers) return true;
     var str;
 
     this.interceptBrowserExit(ev);
@@ -804,6 +804,7 @@ Term.prototype.keyDownHandler = function (ev)
 
 Term.prototype.keyUpHandler = function (ev)
 {
+    if(typeof window.jslinuxskiphandlers!=="undefined" && window.jslinuxskiphandlers) return true;
     this.interceptBrowserExit(ev);
 };
 
@@ -833,6 +834,7 @@ Term.prototype.to_utf8 = function(s)
 
 Term.prototype.keyPressHandler = function (ev)
 {
+    if(typeof window.jslinuxskiphandlers!=="undefined" && window.jslinuxskiphandlers) return true;
     var str, char_code;
 
     if (ev.stopPropagation)
@@ -879,12 +881,14 @@ Term.prototype.keyPressHandler = function (ev)
 
 Term.prototype.blurHandler = function (ev)
 {
+    if(typeof window.jslinuxskiphandlers!=="undefined" && window.jslinuxskiphandlers) return true;
     /* allow unloading the page */
     window.onbeforeunload = null;
 };
 
 Term.prototype.wheelHandler = function (ev)
 {
+    if(typeof window.jslinuxskiphandlers!=="undefined" && window.jslinuxskiphandlers) return true;
     if (ev.deltaY < 0)
         this.scroll_disp(-3);
     else if (ev.deltaY > 0)
@@ -932,6 +936,7 @@ Term.prototype.mouseUpHandler = function (ev)
 
 Term.prototype.pasteHandler = function (ev)
 {
+    if(typeof window.jslinuxskiphandlers!=="undefined" && window.jslinuxskiphandlers) return true;
     var c = ev.clipboardData, str;
     if (c) {
         str = c.getData("text/plain");
