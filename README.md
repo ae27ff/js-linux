@@ -5,7 +5,7 @@ NOTE: contents are copyright of Fabrice Bellard and subject to the attached [LIC
 
 ## Modifications applied by this fork
  - JSLinux loader modified to allow setting startup parameters by another script instead of only from page address/query (more modular)
- - Upload progress code is currently disabled until more modular code can be added.
+ - Upload progress code can be disabled by a global flag until more modular code can be added.
  - File table has been modified to indicate mounted files at reserved addresses
  - File system requests are caught by a PHP loader which redirects reserved addresses to mounted files.
 
