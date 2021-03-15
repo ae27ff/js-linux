@@ -7,7 +7,8 @@
 <script>
             //window.jslinuxdisabledownloadprogress = true;
             //window.jslinuxskiphandlers = true;
-            window.jslinuxoverrideparams = "?url=" + window.location.protocol + "//cyber.meme.tips/js-linux/vm_files/buildroot-x86.cfg";
+            function locationpath(){ return document.URL.substr(0,document.URL.lastIndexOf('/')); }
+            window.jslinuxoverrideparams = "?url=" + locationpath() + "/vm_files/buildroot-x86.cfg";
 </script>
 </head>
 <body>
