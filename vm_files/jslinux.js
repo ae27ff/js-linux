@@ -54,6 +54,7 @@ function on_update_file(f,nameoverride)
 
 function update_downloading(flag)
 {
+    if(typeof window.jslinuxdisabledownloadprogress!=="undefined" && window.jslinuxdisabledownloadprogress)
 	return;//dummy code
     var el;
     if (flag) {
