@@ -4,6 +4,11 @@
 <head>
     <title>JSLinux VM</title>
     <link href="vm_files/style.css" type="text/css" rel="stylesheet"/>
+<script>
+            //window.jslinuxdisabledownloadprogress = true;
+            //window.jslinuxskiphandlers = true;
+            window.jslinuxoverrideparams = "?url=" + window.location.protocol + "//cyber.meme.tips/js-linux/vm_files/buildroot-x86.cfg";
+</script>
 </head>
 <body>
 <div id="term_wrap" style="display:none">
@@ -14,6 +19,8 @@
       <label>
        <img title="Upload files" src="vm_files/upload-icon.png"><input type="file" id="files" multiple onchange="on_update_files(this.files)">
       </label>
+      <progress id="net_progress">
+      </progress>
     </div>
 </div>
 <script type="text/javascript" src="vm_files/term.js"></script>
